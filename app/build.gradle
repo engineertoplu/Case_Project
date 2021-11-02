@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.example.anadolubankproject"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ENDPOINT", api_urls.endpoint
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ENDPOINT", api_urls.endpoint
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    dataBinding { enabled true }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    lintOptions {
+        checkDependencies true
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    kapt {
+        generateStubs = true
+    }
+}
+
+dependencies {
+
+    //support
+    implementation deps.support.app_compat
+    implementation deps.support.recyclerview
+    implementation deps.support.cardview
+    implementation deps.support.design
+    implementation deps.support.core_utils
+    implementation deps.support.ktx
+    implementation deps.support.constraint
+    implementation deps.support.multidex
+
+    //room
+    implementation deps.room.runtime
+    kapt deps.room.compiler
+
+    //lifecycle
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    implementation deps.lifecycle.java8
+    implementation deps.lifecycle.vm
+    implementation deps.lifecycle.vm_ktx
+    kapt deps.lifecycle.compiler
+
+    //navigation
+    implementation deps.navigation.fragment
+    implementation deps.navigation.ui
+    implementation deps.navigation.features
+
+    /* kotlin */
+    implementation deps.kotlin.stdlib
+
+    //reactivex
+    implementation deps.reactive.xandroid
+    implementation deps.reactive.xjava
+    implementation deps.reactive.xkotlin
+    implementation deps.reactive.xrelay
+
+    //retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.rx_adapter
+
+    //dagger
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.android_support_compiler
+    kapt deps.dagger.compiler
+
+    //ohhttp
+    implementation deps.okhttp.core
+    implementation deps.okhttp.logging
+
+    //test
+    implementation deps.junit
+
+}

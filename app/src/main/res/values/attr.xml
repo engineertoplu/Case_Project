@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="search_field_card">
+        <attr name="android:hint" />
+    </declare-styleable>
+
+    <declare-styleable name="toolbar_layout">
+        <attr name="tl_title" format="string" />
+        <attr name="tl_hasSearchField" format="boolean" />
+        <attr name="tl_search_hint" format="string" />
+    </declare-styleable>
+
+</resources>

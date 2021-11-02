@@ -1,0 +1,132 @@
+ext.deps = [:]
+def versions = [:]
+//project directory
+versions.gradle_plugin = '4.0.1'
+versions.kotlin = '1.4.21'
+//app directory
+versions.appcompat = "1.0.2"
+versions.ktx = "1.0.1"
+versions.support = "1.0.0"
+versions.material = "1.1.0-alpha04"
+versions.lifecycle = "2.0.0"
+versions.arch_core = "2.0.0"
+versions.room = "2.2.6"
+versions.glide = "4.8.0"
+versions.transformation = "4.+"
+versions.constraint_layout = "2.0.4"
+versions.multidex = "2.0.0"
+versions.rxandroid = "2.1.0"
+versions.rxjava = "2.2.2"
+versions.rxkotlin = "2.3.0"
+versions.rxrelay = "2.1.0"
+versions.retrofit = "2.4.0"
+versions.okhttp = "3.11.0"
+versions.dagger = "2.16"
+versions.gson = "2.8.5"
+versions.junit = "4.12"
+versions.work = "1.0.0-alpha10"
+versions.navigation = "2.3.5"
+versions.multidex = "2.0.0"
+
+def deps = [:]
+def support = [:]
+support.annotations = "androidx.annotation:annotation:$versions.support"
+support.app_compat = "androidx.appcompat:appcompat:$versions.appcompat"
+support.recyclerview = "androidx.recyclerview:recyclerview:$versions.support"
+support.cardview = "androidx.cardview:cardview:$versions.support"
+support.design = "com.google.android.material:material:$versions.material"
+support.core_utils = "androidx.legacy:legacy-support-core-utils:$versions.support"
+support.ktx = "androidx.core:core-ktx:$versions.ktx"
+support.constraint = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+support.multidex = "androidx.multidex:multidex:$versions.multidex"
+deps.support = support
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
+deps.kotlin = kotlin
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.testing = "androidx.room:room-testing:$versions.room"
+room.rxjava2 = "androidx.room:room-rxjava2:$versions.room"
+deps.room = room
+
+def arch_core = [:]
+arch_core.testing = "androidx.arch.core:core-testing:$versions.arch_core"
+deps.arch_core = arch_core
+
+def lifecycle = [:]
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+lifecycle.vm = "androidx.lifecycle:lifecycle-viewmodel:$versions.lifecycle"
+lifecycle.vm_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def reactive = [:]
+reactive.xandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+reactive.xjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+reactive.xkotlin = "io.reactivex.rxjava2:rxkotlin:$versions.rxkotlin"
+reactive.xrelay = "com.jakewharton.rxrelay2:rxrelay:$versions.rxrelay"
+deps.reactive = reactive
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+retrofit.rx_adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+deps.retrofit = retrofit
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+deps.dagger = dagger
+def okhttp = [:]
+okhttp.core = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.logging = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.okhttp = okhttp
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+glide.transformations = "jp.wasabeef:glide-transformations:$versions.transformation"
+deps.glide = glide
+def work = [:]
+work.runtime = "android.arch.work:work-runtime:$versions.work"
+work.testing = "android.arch.work:work-testing:$versions.work"
+work.runtime_ktx = "android.arch.work:work-runtime-ktx:$versions.work"
+deps.work = work
+
+def navigation = [:]
+navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+navigation.ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+navigation.safeargs = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+navigation.features = "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation"
+deps.navigation = navigation
+
+
+deps.junit = "junit:junit:$versions.junit"
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+//top level
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.gradle_plugin"
+ext.deps = deps
+def build_versions = [:]
+build_versions.min_sdk = 21
+build_versions.target_sdk = 30
+build_versions.build_tools = "30.0.2"
+ext.build_versions = build_versions
+def api_urls = [:]
+api_urls.endpoint = '"https://jsonplaceholder.typicode.com/"'
+ext.api_urls = api_urls
+
+static def addRepos(RepositoryHandler handler) {
+    handler.maven { url 'https://maven.google.com' }
+    handler.google()
+    handler.mavenCentral()
+    handler.maven { url "https://jitpack.io" }
+    handler.jcenter ()}
+
+ext.addRepos = this.&addRepos

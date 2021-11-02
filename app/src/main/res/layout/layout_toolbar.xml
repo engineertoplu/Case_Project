@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/dashToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/purple_500"
+        android:gravity="center"
+        android:minHeight="56dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchTitlePart">
+
+                <RelativeLayout
+                    android:id="@+id/rlLeft"
+                    style="@style/Widget.AnandoluBank.Clickable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:minHeight="56dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/spacing_15"
+                        android:padding="@dimen/spacing_10"
+                        android:src="@drawable/ic_baseline_search_24" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/rlLeft"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/spacing_10"
+                    android:layout_toStartOf="@id/rlRight"
+                    android:gravity="start"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    tools:text="title" />
+
+                <RelativeLayout
+                    android:id="@+id/rlRight"
+                    style="@style/Widget.AnandoluBank.Clickable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:minHeight="56dp">
+
+                    <ImageView
+                        android:id="@+id/ivSearchIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/spacing_15"
+                        android:padding="@dimen/spacing_10"
+                        android:src="@drawable/ic_baseline_search_24"/>
+
+                    <ImageView
+                        android:id="@+id/ivFavIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/spacing_15"
+                        android:padding="@dimen/spacing_10"
+                        android:src="@drawable/ic_baseline_star_outline_24"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.example.anadolubankproject.ui.customview.SearchFieldCard
+                android:id="@+id/searchField"
+                android:transitionName="SearchQueryCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_10"
+                android:layout_marginRight="@dimen/spacing_10"
+                android:layout_marginBottom="@dimen/spacing_5" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+</merge>

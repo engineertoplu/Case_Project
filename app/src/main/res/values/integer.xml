@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="loading_dialog_delay">100</integer>
+
+    <!--<integer name="min_room_count">1</integer>
+    <integer name="max_room_count">4</integer>
+    <integer name="min_adult_count">1</integer>
+    <integer name="max_adult_count">9</integer>
+    <integer name="min_child_count">0</integer>
+    <integer name="max_child_count">4</integer>
+    <integer name="def_val_room">1</integer>
+    <integer name="def_val_adult">2</integer>
+    <integer name="def_val_child">0</integer>-->
+
+</resources>

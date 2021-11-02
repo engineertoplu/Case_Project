@@ -1,0 +1,59 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AnandoluBankProject" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Widget Base -->
+    <style name="Widget.AnandoluBank" parent="android:Widget" />
+
+    <style name="Widget.AnandoluBank.LoadingDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="Widget.AnandoluBank.Clickable">
+        <item name="android:foreground">?android:selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--Cardview-->
+    <style name="Widget.AnandoluBank.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">@dimen/text_size_11</item>
+    </style>
+
+    <style name="Widget.AnandoluBank.CardView.NoShadow" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/z_0</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardCornerRadius">@dimen/radius_4</item>
+    </style>
+
+    <style name="Widget.AnandoluBank.CardView.Shadowed" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/z_2</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardCornerRadius">@dimen/radius_4</item>
+    </style>
+
+    <style name="Widget.AnandoluBank.CardView.Shadowed.Clickable" parent="Widget.AnandoluBank.CardView.Shadowed">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="Widget.AnandoluBank.CardView.Border" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/z_0</item>
+        <item name="cardCornerRadius">@dimen/radius_4</item>
+        <item name="strokeWidth">@dimen/spacing_1</item>
+    </style>
+
+    <style name="Widget.AnandoluBank.CardView.Border.Clickable" parent="Widget.AnandoluBank.CardView.Border">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+</resources>

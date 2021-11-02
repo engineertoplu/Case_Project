@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AnandoluBank Project</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_dashboard">List</string>
+    <string name="title_detail">Detail</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Error</string>
+
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+    <string name="action_retry">Tekrar Deneyin</string>
+    <string name="search">Ara</string>
+</resources>
